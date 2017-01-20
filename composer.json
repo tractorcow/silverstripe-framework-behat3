@@ -26,9 +26,9 @@
     "silverstripe/assets": "^1@dev",
     "swiftmailer/swiftmailer": "~5.4",
     "symfony/cache": "^3.3@dev",
-    "symfony/config": "^2.8",
+    "symfony/config": "^3.2",
     "symfony/translation": "^2.8",
-    "symfony/yaml": "~2.7",
+    "symfony/yaml": "~3.2",
     "vlucas/phpdotenv": "^2.4"
   },
   "require-dev": {

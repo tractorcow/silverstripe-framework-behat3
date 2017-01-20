@@ -2,32 +2,19 @@
 
 namespace SilverStripe\Framework\Test\Behaviour;
 
-use Behat\Behat\Context\BehatContext;
-use Behat\Behat\Context\Step;
-use Behat\Behat\Event\StepEvent;
 use Behat\Mink\Element\NodeElement;
 use Behat\Mink\Session;
+use Behat\Behat\Context\Context;
+use SilverStripe\BehatExtension\Context\MainContextAwareTrait;
 
 /**
  * CmsUiContext
  *
  * Context used to define steps related to SilverStripe CMS UI like Tree or Panel.
  */
-class CmsUiContext extends BehatContext
+class CmsUiContext implements Context
 {
-    protected $context;
-
-    /**
-     * Initializes context.
-     * Every scenario gets it's own context object.
-     *
-     * @param   array   $parameters     context parameters (set them up through behat.yml)
-     */
-    public function __construct(array $parameters)
-    {
-        // Initialize your context here
-        $this->context = $parameters;
-    }
+    use MainContextAwareTrait;
 
     /**
      * Get Mink session from MinkContext
@@ -390,10 +377,12 @@ SCRIPT
      */
     public function iSetTheCmsToMode($mode)
     {
+        throw new \BadMethodCallException("Todo : upgrade this step to behat 3");
+        /*
         return array(
             new Step\When(sprintf('I fill in the "Change view mode" dropdown with "%s"', $mode)),
             new Step\When('I wait for 1 second') // wait for CMS layout to redraw
-        );
+        );*/
     }
 
     /**
@@ -419,6 +408,8 @@ SCRIPT
      */
     public function iSwitchThePreviewToMode($mode)
     {
+        throw new \BadMethodCallException("Todo : upgrade this step to behat 3");
+        /*
         $controls = $this->getSession()->getPage()->find('css', '.cms-preview-controls');
         assertNotNull($controls, 'Preview controls not found');
 
@@ -430,7 +421,7 @@ SCRIPT
 
         $label->click();
 
-        return new Step\When('I wait for the preview to load');
+        return new Step\When('I wait for the preview to load');*/
     }
 
     /**
