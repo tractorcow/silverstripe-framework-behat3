@@ -62,10 +62,10 @@
       "SilverStripe\\Security\\": "src/Security/",
       "SilverStripe\\Security\\Tests\\": "tests/php/Security/",
       "SilverStripe\\View\\": "src/View/",
-      "SilverStripe\\View\\Tests\\": "tests/php/View/"
+      "SilverStripe\\View\\Tests\\": "tests/php/View/",
+      "SilverStripe\\Framework\\Test\\Behaviour\\": "tests/behat/bootstrap/"
     },
-    "files": ["src/Core/Constants.php"],
-    "classmap": ["tests/behat/features/bootstrap"]
+    "files": ["src/Core/Constants.php"]
   },
   "include-path": [
       "src/",
