@@ -30,13 +30,13 @@ class SecurityDefaultAdminTest extends SapphireTest
         $this->defaultPassword = Security::default_admin_password();
         Security::clear_default_admin();
         Security::setDefaultAdmin('admin', 'password');
-        Permission::flush_permission_cache();
+        Permission::flush();
     }
 
     protected function tearDown()
     {
         Security::setDefaultAdmin($this->defaultUsername, $this->defaultPassword);
-        Permission::flush_permission_cache();
+        Permission::flush();
         parent::tearDown();
     }
 
