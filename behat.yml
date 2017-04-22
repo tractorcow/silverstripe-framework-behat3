@@ -10,8 +10,8 @@ default:
         - SilverStripe\BehatExtension\Context\BasicContext
         - SilverStripe\BehatExtension\Context\EmailContext
         - SilverStripe\BehatExtension\Context\LoginContext
-        - SilverStripe\BehatExtension\Context\FixtureContext:
-        # Note: double indent for args is intentional
+        -
+          SilverStripe\BehatExtension\Context\FixtureContext:
             - %paths.modules.framework%/tests/behat/features/files/
 
   extensions:
