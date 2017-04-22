@@ -1,6 +1,6 @@
 <?php
 
-namespace SilverStripe\Framework\Test\Behaviour;
+namespace SilverStripe\Framework\Tests\Behaviour;
 
 use Behat\Mink\Element\NodeElement;
 use Behat\Mink\Session;

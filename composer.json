@@ -63,7 +63,7 @@
       "SilverStripe\\Security\\Tests\\": "tests/php/Security/",
       "SilverStripe\\View\\": "src/View/",
       "SilverStripe\\View\\Tests\\": "tests/php/View/",
-      "SilverStripe\\Framework\\Test\\Behaviour\\": "tests/behat/src/"
+      "SilverStripe\\Framework\\Tests\\Behaviour\\": "tests/behat/src/"
     },
     "files": ["src/Core/Constants.php"]
   },

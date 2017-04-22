@@ -1,6 +1,6 @@
 <?php
 
-namespace SilverStripe\Framework\Test\Behaviour;
+namespace SilverStripe\Framework\Tests\Behaviour;
 
 use SilverStripe\BehatExtension\Context\SilverStripeContext;
 
