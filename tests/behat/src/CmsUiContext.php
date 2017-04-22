@@ -7,6 +7,7 @@ use Behat\Mink\Session;
 use Behat\Behat\Context\Context;
 use SilverStripe\BehatExtension\Context\MainContextAwareTrait;
 use SilverStripe\BehatExtension\Context\RetryableContextTrait;
+use SilverStripe\BehatExtension\Utility\StepHelper;
 
 /**
  * CmsUiContext
@@ -16,7 +17,7 @@ use SilverStripe\BehatExtension\Context\RetryableContextTrait;
 class CmsUiContext implements Context
 {
     use MainContextAwareTrait;
-    use RetryableContextTrait;
+    use StepHelper;
 
     /**
      * Get Mink session from MinkContext
@@ -138,10 +139,8 @@ class CmsUiContext implements Context
     public function stepIShouldSeeInCmsTree($text)
     {
         // Wait until visible
-        $element = $this->retryUntil(function () use ($text) {
-            $cmsTreeElement = $this->getCmsTreeElement();
-            return $cmsTreeElement->find('named', array('content', "'$text'"));
-        });
+        $cmsTreeElement = $this->getCmsTreeElement();
+        $element = $cmsTreeElement->find('named', array('content', "'$text'"));
         assertNotNull($element, sprintf('%s not found', $text));
     }
 
@@ -151,12 +150,9 @@ class CmsUiContext implements Context
     public function stepIShouldNotSeeInCmsTree($text)
     {
         // Wait until not visible
-        $isNull = $this->retryUntil(function () use ($text) {
-            $cmsTreeElement = $this->getCmsTreeElement();
-            $element = $cmsTreeElement->find('named', array('content', "'$text'"));
-            return is_null($element);
-        });
-        assert($isNull, sprintf('%s found', $text));
+        $cmsTreeElement = $this->getCmsTreeElement();
+        $element = $cmsTreeElement->find('named', array('content', "'$text'"));
+        assertNull($element, sprintf('%s found', $text));
     }
 
     /**
